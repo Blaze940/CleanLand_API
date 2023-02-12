@@ -1,4 +1,4 @@
-package com.cleanlandapi.spring_app;
+package com.cleanLandAPI;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

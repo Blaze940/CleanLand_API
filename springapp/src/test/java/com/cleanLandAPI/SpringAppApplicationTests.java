@@ -1,13 +1,12 @@
-package com.cleanlandapi.spring_app;
+package com.cleanLandAPI;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringAppApplicationTests {
+public class SpringAppApplicationTests {
 
     @Test
     void contextLoads() {
     }
-
 }
