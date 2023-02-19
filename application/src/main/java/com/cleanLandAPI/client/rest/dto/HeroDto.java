@@ -1,4 +1,4 @@
-package com.cleanLandAPI.data;
+package com.cleanLandAPI.client.rest.dto;
 
 import lombok.Builder;
 import lombok.Data;
