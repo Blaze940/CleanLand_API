@@ -14,4 +14,13 @@ public interface HeroDtoMapper {
             hero.getLevel());
     }
 
+    static Hero toEntity(HeroDto heroDto) {
+        return new Hero(
+            heroDto.getName(),
+            heroDto.getLifePoints(),
+            heroDto.getExperiencePoints(),
+            heroDto.getPowers(),
+            heroDto.getLevel());
+    }
+
 }

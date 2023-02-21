@@ -1,11 +1,13 @@
 package com.cleanLandAPI.service;
 
 import com.cleanLandAPI.data.Hero;
+import com.cleanLandAPI.ports.ApplicationError;
+import io.vavr.control.Either;
 
 public interface HeroInterface {
 
     void setLifePoints(int lifePoints);
-    void createHero(Hero hero);
+    Either<ApplicationError, Hero> createHero(Hero hero);
     void attack();
 
 }
