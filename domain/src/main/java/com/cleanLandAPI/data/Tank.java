@@ -2,17 +2,10 @@ package com.cleanLandAPI.data;
 
 public class Tank extends Speciality{
 
-    private int lifePoints;
-    private int armor;
-    private int power;
-    private int powerMages;
-
-    public Tank(int lifePoints, int armor, int power, int powerMages) {
-        this.lifePoints = lifePoints;
-        this.armor = armor;
-        this.power = power;
-        this.powerMages = powerMages;
-    }
+    private final static int lifePoints = 1000;
+    private final int armor = 20;
+    private final int power = 100;
+    private final int powerMages = 20;
 
 
     @Override

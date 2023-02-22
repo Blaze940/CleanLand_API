@@ -2,17 +2,10 @@ package com.cleanLandAPI.data;
 
 public class Assasin extends Speciality{
 
-    private int lifePoints;
-    private int armor;
-    private int power;
-    private int powerMages;
-
-    public Assasin(int lifePoints, int armor, int power, int powerMages) {
-        this.lifePoints = lifePoints;
-        this.armor = armor;
-        this.power = power;
-        this.powerMages = powerMages;
-    }
+    private final static int lifePoints = 800;
+    private final int armor = 20;
+    private final int power = 200;
+    private final int powerMages = 20;
 
     private void createAssasin(){
     }

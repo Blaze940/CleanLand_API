@@ -4,8 +4,9 @@ import com.cleanLandAPI.service.SpecialityInterface;
 
 abstract public class Speciality implements SpecialityInterface {
 
-    public void updateSpeciality(){
-
+    public boolean isRare(Hero hero){
+        return false;
     }
+
 
 }

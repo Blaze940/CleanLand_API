@@ -2,17 +2,10 @@ package com.cleanLandAPI.data;
 
 public class Mage extends Speciality{
 
-    private int lifePoints;
-    private int armor;
-    private int power;
-    private int powerMages;
-
-    public Mage(int lifePoints, int armor, int power, int powerMages) {
-        this.lifePoints = lifePoints;
-        this.armor = armor;
-        this.power = power;
-        this.powerMages = powerMages;
-    }
+    private final static int lifePoints = 700;
+    private final int armor = 10;
+    private final int power = 150;
+    private final int powerMages = 25;
 
     @Override
     public void rarity(Hero hero) {
