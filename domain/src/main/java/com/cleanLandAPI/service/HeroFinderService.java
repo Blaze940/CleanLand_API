@@ -23,4 +23,5 @@ public class HeroFinderService implements HeroSpiInterface{
             throw new HeroException("Hero not found");
         });
     }
+
 }

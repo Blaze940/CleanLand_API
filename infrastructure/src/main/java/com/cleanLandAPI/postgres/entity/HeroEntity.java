@@ -1,5 +1,6 @@
 package com.cleanLandAPI.postgres.entity;
 
+import com.cleanLandAPI.data.Speciality;
 import com.cleanLandAPI.data.enums.Rarity;
 import lombok.*;
 
@@ -22,7 +23,7 @@ public class HeroEntity {
     private int powers;
     private int level;
     @ManyToOne
-    private SpecialityEntity speciality;
+    private Speciality speciality;
     private Rarity rarity;
 
 }

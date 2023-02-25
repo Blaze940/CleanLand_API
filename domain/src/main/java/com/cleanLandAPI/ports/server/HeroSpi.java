@@ -11,5 +11,6 @@ public interface HeroSpi {
 
     List<Hero> findAllHeroes();
 
+    Hero save(Hero hero);
 
 }

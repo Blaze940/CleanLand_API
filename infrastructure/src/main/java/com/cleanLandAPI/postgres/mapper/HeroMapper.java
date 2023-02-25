@@ -12,14 +12,15 @@ public interface HeroMapper {
         return Hero.builder()
                 .id(hero.getId())
                 .name(hero.getName())
+                .speciality(hero.getSpeciality())
                 .rarity(hero.getRarity())
                 .level(hero.getLevel())
                 .lifePoints(hero.getLifePoints())
                 .build();
     }
 
-    static Hero fromDomain(Hero hero){
-        return Hero.builder()
+    static HeroEntity fromDomain(Hero hero){
+        return HeroEntity.builder()
                 .id(hero.getId())
                 .name(hero.getName())
                 .speciality(hero.getSpeciality())
