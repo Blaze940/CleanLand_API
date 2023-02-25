@@ -7,6 +7,7 @@ import lombok.Builder;
 @Builder
 final public class Hero {
 
+    private int id;
     private String name;
     private Long lifePoints;
     private Long experiencePoints;
@@ -14,6 +15,10 @@ final public class Hero {
     private int level;
     private Speciality speciality;
     private Rarity rarity;
+
+    public int getId() {
+        return id;
+    }
 
     public String getName() {
         return name;
