@@ -9,6 +9,6 @@ public interface HeroSpiInterface {
 
     List<Hero> findAllHeroes();
 
-    Optional<Hero> findHeroById(int id);
+    Hero findHeroById(int id);
 
 }

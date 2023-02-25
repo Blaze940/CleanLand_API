@@ -1,4 +1,4 @@
-package com.cleanLandAPI.mysql.adapter;
+package com.cleanLandAPI.postgres.adapter;
 
 import com.cleanLandAPI.data.Hero;
 

@@ -6,7 +6,7 @@ import io.vavr.control.Either;
 
 public interface HeroInterface {
 
-    void setLifePoints(int lifePoints);
+    void setLifePoints(Hero hero, int lifePoints);
     Hero save(Hero hero);
     void attack();
 

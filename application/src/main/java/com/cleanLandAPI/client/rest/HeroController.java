@@ -36,5 +36,11 @@ public class HeroController {
         return ResponseEntity.ok().body(heroes);
     }
 
+    @GetMapping("/findHeroById/{id}")
+    public ResponseEntity<HeroDto> findHeroById(@PathVariable int id) {
+        HeroDto hero = HeroDtoMapper.toDto(heroFinderService.findHeroById(id));
+        return ResponseEntity.ok().body(hero);
+    }
+
 
 }

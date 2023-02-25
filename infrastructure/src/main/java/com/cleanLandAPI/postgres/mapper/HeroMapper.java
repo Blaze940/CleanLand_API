@@ -1,7 +1,7 @@
-package com.cleanLandAPI.mysql.mapper;
+package com.cleanLandAPI.postgres.mapper;
 
 import com.cleanLandAPI.data.Hero;
-import com.cleanLandAPI.mysql.entity.HeroEntity;
+import com.cleanLandAPI.postgres.entity.HeroEntity;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -12,7 +12,6 @@ public interface HeroMapper {
         return Hero.builder()
                 .id(hero.getId())
                 .name(hero.getName())
-                .speciality(hero.getSpeciality())
                 .rarity(hero.getRarity())
                 .level(hero.getLevel())
                 .lifePoints(hero.getLifePoints())

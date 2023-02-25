@@ -9,8 +9,8 @@ import io.vavr.control.Either;
 public class HeroService implements HeroInterface{
 
     @Override
-    public void setLifePoints(int lifePoints) {
-
+    public void setLifePoints(Hero hero, int lifePoints) {
+        hero.updateLifePoints((long) lifePoints);
     }
 
     @Override
@@ -24,6 +24,6 @@ public class HeroService implements HeroInterface{
 
     @Override
     public void attack() {
-
+        System.out.println("Hero attacked");
     }
 }

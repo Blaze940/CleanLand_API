@@ -4,23 +4,22 @@ import com.cleanLandAPI.data.enums.Rarity;
 import com.cleanLandAPI.data.enums.Specialities;
 import com.cleanLandAPI.service.SpecialityInterface;
 import lombok.Builder;
+import lombok.Setter;
 
 @Builder
+@Setter
 public final class Speciality implements SpecialityInterface {
 
 
-    private int lifePoints;
     private int armor;
-    private int power;
-    private int powerMages;
+    private int powerAdd;
+    private int pvInit;
     private Specialities classSpeciality;
 
 
-    public Speciality(int lifePoints, int armor, int power, int powerMages, Specialities classSpeciality) {
-        this.lifePoints = lifePoints;
+    public Speciality(int armor, int powerAdd, Specialities classSpeciality) {
         this.armor = armor;
-        this.power = power;
-        this.powerMages = powerMages;
+        this.powerAdd = powerAdd;
         this.classSpeciality = classSpeciality;
     }
 

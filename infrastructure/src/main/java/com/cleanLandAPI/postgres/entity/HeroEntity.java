@@ -1,15 +1,19 @@
-package com.cleanLandAPI.mysql.entity;
+package com.cleanLandAPI.postgres.entity;
 
-import com.cleanLandAPI.data.Speciality;
 import com.cleanLandAPI.data.enums.Rarity;
 import lombok.*;
 
+import javax.persistence.*;
+
+@Entity
 @Getter
 @Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "T_HERO")
 public class HeroEntity {
+    @Id
     @EqualsAndHashCode.Include
     private int id;
     private String name;
@@ -17,6 +21,8 @@ public class HeroEntity {
     private Long experiencePoints;
     private int powers;
     private int level;
-    private Speciality speciality;
+    @ManyToOne
+    private SpecialityEntity speciality;
     private Rarity rarity;
+
 }

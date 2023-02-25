@@ -1,6 +1,7 @@
 package com.cleanLandAPI.service;
 
 import com.cleanLandAPI.data.Hero;
+import com.cleanLandAPI.exception.HeroException;
 import com.cleanLandAPI.ports.client.HeroSpiInterface;
 import com.cleanLandAPI.ports.server.HeroSpi;
 import lombok.RequiredArgsConstructor;
@@ -17,7 +18,9 @@ public class HeroFinderService implements HeroSpiInterface{
         return heroSpi.findAllHeroes();
     }
 
-    public Optional<Hero> findHeroById(int id){
-        return heroSpi.findHeroById(id);
+    public Hero findHeroById(int id){
+        return heroSpi.findHeroById(id).orElseThrow(() -> {
+            throw new HeroException("Hero not found");
+        });
     }
 }

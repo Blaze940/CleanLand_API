@@ -1,4 +1,14 @@
 spring:
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: org.postgresql.Driver.Driver
+    url: jdbc:postgresql://localhost:5400/cleanland_api
+    username: user
+    password: user
+    jpa:
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+        properties:
+            hibernate:
+            format_sql: true
 debug: true
