@@ -1,11 +1,12 @@
 package com.cleanLandAPI.data;
 
+import com.cleanLandAPI.data.enums.Specialities;
+
 public class Tank extends Speciality{
 
-    private final static int lifePoints = 1000;
-    private final int armor = 20;
-    private final int power = 100;
-    private final int powerMages = 20;
+    public Tank() {
+        super(1000, 20, 100, 20, Specialities.TANK);
+    }
 
 
     @Override

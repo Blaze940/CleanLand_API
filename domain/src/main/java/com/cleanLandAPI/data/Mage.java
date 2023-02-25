@@ -1,11 +1,12 @@
 package com.cleanLandAPI.data;
 
+import com.cleanLandAPI.data.enums.Specialities;
+
 public class Mage extends Speciality{
 
-    private final static int lifePoints = 700;
-    private final int armor = 10;
-    private final int power = 150;
-    private final int powerMages = 25;
+    public Mage() {
+        super(700, 10, 150, 25, Specialities.MAGE);
+    }
 
     @Override
     public void rarity(Hero hero) {

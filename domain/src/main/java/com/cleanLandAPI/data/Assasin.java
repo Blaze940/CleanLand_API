@@ -1,13 +1,11 @@
 package com.cleanLandAPI.data;
 
+import com.cleanLandAPI.data.enums.Specialities;
+
 public class Assasin extends Speciality{
 
-    private final static int lifePoints = 800;
-    private final int armor = 20;
-    private final int power = 200;
-    private final int powerMages = 20;
-
-    private void createAssasin(){
+    public Assasin() {
+        super(800, 20, 200, 20, Specialities.ASSASSIN);
     }
 
     @Override
