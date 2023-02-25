@@ -5,7 +5,7 @@ import com.cleanLandAPI.data.enums.Rarity;
 import lombok.Builder;
 
 @Builder
-public class Hero {
+final public class Hero {
 
     private String name;
     private Long lifePoints;
@@ -14,16 +14,6 @@ public class Hero {
     private int level;
     private Speciality speciality;
     private Rarity rarity;
-
-    public Hero(String name, Long lifePoints, Long experiencePoints, int powers, int level, Speciality speciality, Rarity rarity) {
-        this.name = name;
-        this.lifePoints = lifePoints;
-        this.experiencePoints = experiencePoints;
-        this.powers = powers;
-        this.level = level;
-        this.speciality = speciality;
-        this.rarity = rarity;
-    }
 
     public String getName() {
         return name;

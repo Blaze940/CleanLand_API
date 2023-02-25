@@ -1,9 +1,12 @@
 package com.cleanLandAPI.data;
 
+import com.cleanLandAPI.data.enums.Rarity;
 import com.cleanLandAPI.data.enums.Specialities;
 import com.cleanLandAPI.service.SpecialityInterface;
+import lombok.Builder;
 
-abstract public class Speciality implements SpecialityInterface {
+@Builder
+public final class Speciality implements SpecialityInterface {
 
 
     private int lifePoints;
@@ -25,8 +28,12 @@ abstract public class Speciality implements SpecialityInterface {
         return armor;
     }
 
-    public boolean isRare(Hero hero){
-        return false;
+    @Override
+    public boolean isRare(Rarity rarity){
+        return switch (rarity) {
+            case RARE, LEGENDARY -> true;
+            default -> false;
+        };
     }
 
 
