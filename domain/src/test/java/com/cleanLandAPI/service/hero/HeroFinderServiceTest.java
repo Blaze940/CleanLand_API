@@ -1,7 +1,8 @@
-package com.cleanLandAPI.service;
+package com.cleanLandAPI.service.hero;
 
 
 import com.cleanLandAPI.ports.server.HeroSpiFinderServer;
+import com.cleanLandAPI.service.hero.HeroFinderService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

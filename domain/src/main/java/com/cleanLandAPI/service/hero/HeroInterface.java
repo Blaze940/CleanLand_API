@@ -1,4 +1,4 @@
-package com.cleanLandAPI.service;
+package com.cleanLandAPI.service.hero;
 
 import com.cleanLandAPI.data.Hero;
 import com.cleanLandAPI.ports.ApplicationError;

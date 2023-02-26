@@ -1,10 +1,10 @@
-package com.cleanLandAPI.service;
+package com.cleanLandAPI.service.hero;
 
 import com.cleanLandAPI.data.Hero;
 import com.cleanLandAPI.exception.HeroException;
 import com.cleanLandAPI.ports.client.HeroApiCreatorInterface;
 import com.cleanLandAPI.ports.server.HeroSpiCreatorHero;
-import com.cleanLandAPI.service.validation.HeroValidation;
+import com.cleanLandAPI.service.hero.validation.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 

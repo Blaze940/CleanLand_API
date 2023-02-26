@@ -2,7 +2,7 @@ package com.cleanLandAPI.data;
 
 import com.cleanLandAPI.data.enums.Rarity;
 import com.cleanLandAPI.data.enums.Specialities;
-import com.cleanLandAPI.service.SpecialityInterface;
+import com.cleanLandAPI.service.hero.SpecialityInterface;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;

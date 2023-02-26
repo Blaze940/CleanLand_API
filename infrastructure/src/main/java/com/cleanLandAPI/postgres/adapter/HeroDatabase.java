@@ -6,11 +6,8 @@ import com.cleanLandAPI.ports.server.HeroSpiCreatorHero;
 import com.cleanLandAPI.ports.server.HeroSpiFinderServer;
 import com.cleanLandAPI.postgres.mapper.HeroMapper;
 import com.cleanLandAPI.postgres.repository.HeroRepository;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.val;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
