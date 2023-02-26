@@ -2,9 +2,7 @@ package com.cleanLandAPI.ports.client;
 
 import com.cleanLandAPI.data.Hero;
 
-import java.util.List;
-
-public interface HeroSpiCreatorInterface {
+public interface HeroApiCreatorInterface {
 
     Hero save(Hero hero);
 

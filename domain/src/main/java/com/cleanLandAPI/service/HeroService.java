@@ -2,7 +2,7 @@ package com.cleanLandAPI.service;
 
 import com.cleanLandAPI.data.Hero;
 import com.cleanLandAPI.exception.HeroException;
-import com.cleanLandAPI.ports.client.HeroSpiCreatorInterface;
+import com.cleanLandAPI.ports.client.HeroApiCreatorInterface;
 import com.cleanLandAPI.ports.server.HeroSpiCreatorHero;
 import com.cleanLandAPI.service.validation.HeroValidation;
 import lombok.RequiredArgsConstructor;
@@ -10,7 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RequiredArgsConstructor
-public class HeroService implements HeroSpiCreatorInterface, HeroInterface{
+public class HeroService implements HeroApiCreatorInterface, HeroInterface{
 
     private final HeroSpiCreatorHero heroSpi;
 

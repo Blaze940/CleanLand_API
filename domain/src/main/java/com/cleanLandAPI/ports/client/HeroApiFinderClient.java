@@ -4,7 +4,7 @@ import com.cleanLandAPI.data.Hero;
 
 import java.util.List;
 
-public interface HeroSpiFinderClient {
+public interface HeroApiFinderClient {
 
     List<Hero> findAllHeroes();
 
