@@ -12,4 +12,4 @@ import lombok.NoArgsConstructor;
 import static com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility.ANY;
 
 @JsonAutoDetect(fieldVisibility = ANY)
-public record HeroDto (String name, Long lifePoints, Long experiencePoints, int powers, int level, Speciality speciality, Rarity rarity){}
+public record HeroDto (int id, String name, Long lifePoints, Long experiencePoints, int powers, int level, Speciality speciality, Rarity rarity){}

@@ -4,9 +4,13 @@ import com.cleanLandAPI.client.rest.dto.HeroDto;
 import com.cleanLandAPI.client.rest.dto.HeroRequest;
 import com.cleanLandAPI.client.rest.mapper.HeroDtoMapper;
 import com.cleanLandAPI.data.Hero;
+import com.cleanLandAPI.ports.client.HeroApiCreatorInterface;
+import com.cleanLandAPI.ports.client.HeroApiFinderClient;
 import com.cleanLandAPI.service.HeroFinderService;
 import com.cleanLandAPI.service.HeroService;
+import lombok.Builder;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -21,8 +25,9 @@ import static com.cleanLandAPI.client.rest.mapper.HeroDtoMapper.toEntity;
 @RequestMapping(path = "/hero")
 public class HeroController {
 
-    private HeroFinderService heroFinderService;
-    private HeroService heroService;
+
+    private final HeroApiFinderClient heroFinderService;
+    private final HeroApiCreatorInterface heroService;
 
 
     @PostMapping("/createHero")
@@ -37,11 +42,11 @@ public class HeroController {
         return ResponseEntity.ok().body(heroes);
     }
 
-    @GetMapping("/findHeroById/{id}")
+/*    @GetMapping("/findHeroById/{id}")
     public ResponseEntity<HeroDto> findHeroById(@PathVariable int id) {
         HeroDto hero = HeroDtoMapper.toDto(heroFinderService.findHeroById(id));
         return ResponseEntity.ok().body(hero);
-    }
+    }*/
 
 
 }

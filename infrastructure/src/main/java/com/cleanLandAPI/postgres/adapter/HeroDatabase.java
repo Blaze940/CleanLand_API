@@ -6,6 +6,8 @@ import com.cleanLandAPI.ports.server.HeroSpiCreatorHero;
 import com.cleanLandAPI.ports.server.HeroSpiFinderServer;
 import com.cleanLandAPI.postgres.mapper.HeroMapper;
 import com.cleanLandAPI.postgres.repository.HeroRepository;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.val;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +20,8 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class HeroDatabase implements HeroSpiCreatorHero, HeroSpiFinderServer {
 
-    private HeroRepository heroRepository;
+
+    private final HeroRepository heroRepository;
 
     @Override
     public Optional<Hero> findHeroById(int id){

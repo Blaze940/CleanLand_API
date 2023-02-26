@@ -6,10 +6,12 @@ import com.cleanLandAPI.ports.server.HeroSpiCreatorHero;
 import com.cleanLandAPI.ports.server.HeroSpiFinderServer;
 import com.cleanLandAPI.service.HeroFinderService;
 import com.cleanLandAPI.service.HeroService;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@EntityScan("com.cleanLandAPI.postgres.entity")
 public class ControllerConfiguration {
 
     @Bean

@@ -11,6 +11,7 @@ public interface HeroDtoMapper {
 
     static HeroDto toDto(Hero hero) {
         return new HeroDto(
+                hero.getId(),
                 hero.getName(),
                 hero.getLifePoints(),
                 hero.getExperiencePoints(),
@@ -26,7 +27,8 @@ public interface HeroDtoMapper {
                 .experiencePoints(heroDto.experiencePoints())
                 .powers(heroDto.powers())
                 .level(heroDto.level())
-                .speciality(heroDto.speciality()).rarity(heroDto.rarity())
+                .speciality(heroDto.speciality())
+                .rarity(heroDto.rarity())
                 .build();
     }
 
