@@ -12,10 +12,10 @@ import javax.persistence.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Table(name = "T_HERO")
 public class HeroEntity {
     @Id
-    @EqualsAndHashCode.Include
     private int id;
     private String name;
     private Long lifePoints;
