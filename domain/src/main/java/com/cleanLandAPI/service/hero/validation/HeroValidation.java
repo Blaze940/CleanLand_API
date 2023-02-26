@@ -1,4 +1,4 @@
-package com.cleanLandAPI.service.validation;
+package com.cleanLandAPI.service.hero.validation;
 
 import com.cleanLandAPI.data.Hero;
 
