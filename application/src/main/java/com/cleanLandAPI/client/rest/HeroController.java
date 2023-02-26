@@ -1,6 +1,7 @@
 package com.cleanLandAPI.client.rest;
 
 import com.cleanLandAPI.client.rest.dto.HeroDto;
+import com.cleanLandAPI.client.rest.dto.HeroRequest;
 import com.cleanLandAPI.client.rest.mapper.HeroDtoMapper;
 import com.cleanLandAPI.data.Hero;
 import com.cleanLandAPI.service.HeroFinderService;
@@ -25,7 +26,7 @@ public class HeroController {
 
 
     @PostMapping("/createHero")
-    public ResponseEntity<Object> createHero(@RequestBody HeroDto hero) {
+    public ResponseEntity<Object> createHero(@RequestBody HeroRequest hero) {
         HeroDto heroDto = HeroDtoMapper.toDto(heroService.save(toEntity(hero)));
         return ResponseEntity.ok().body(heroDto);
     }

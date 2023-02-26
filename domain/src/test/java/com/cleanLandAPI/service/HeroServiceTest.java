@@ -1,4 +1,4 @@
-package com.cleanLandAPI.domain.service;
+package com.cleanLandAPI.service;
 
 import com.cleanLandAPI.ports.server.HeroSpiCreatorHero;
 import com.cleanLandAPI.service.HeroService;

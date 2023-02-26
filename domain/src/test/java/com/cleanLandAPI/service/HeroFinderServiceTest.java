@@ -1,8 +1,7 @@
-package com.cleanLandAPI.domain.service;
+package com.cleanLandAPI.service;
 
 
-import com.cleanLandAPI.ports.server.HeroSpiCreatorHero;
-import com.cleanLandAPI.service.HeroFinderService;
+import com.cleanLandAPI.ports.server.HeroSpiFinderServer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -16,10 +15,15 @@ public class HeroFinderServiceTest {
     private HeroFinderService service;
 
     @Mock
-    private HeroSpiCreatorHero spi;
+    private HeroSpiFinderServer spi;
 
     @Test
-    public void test() {
+    public void should_find_hero() {
+        // TODO
+    }
+
+    @Test
+    public void should_not_find_hero() {
         // TODO
     }
 

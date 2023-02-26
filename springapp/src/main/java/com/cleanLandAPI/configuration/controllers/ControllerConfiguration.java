@@ -17,6 +17,7 @@ public class ControllerConfiguration {
         return new HeroService(heroSpiCreatorHero);
     }
 
+
     @Bean
     public HeroSpiFinderClient heroSpiFinder(HeroSpiFinderServer heroSpi){
         return new HeroFinderService(heroSpi);

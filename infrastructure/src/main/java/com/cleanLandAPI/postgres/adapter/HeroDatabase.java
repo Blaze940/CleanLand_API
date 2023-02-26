@@ -1,6 +1,7 @@
 package com.cleanLandAPI.postgres.adapter;
 
 import com.cleanLandAPI.data.Hero;
+import com.cleanLandAPI.exception.HeroException;
 import com.cleanLandAPI.ports.server.HeroSpiCreatorHero;
 import com.cleanLandAPI.ports.server.HeroSpiFinderServer;
 import com.cleanLandAPI.postgres.mapper.HeroMapper;
@@ -18,13 +19,14 @@ public class HeroDatabase implements HeroSpiCreatorHero, HeroSpiFinderServer {
 
     private final HeroRepository heroRepository;
 
+    @Override
     public Optional<Hero> findHeroById(int id){
-        return Optional.empty();
+        return Optional.ofNullable(HeroMapper.toDomain(heroRepository.findById(id).orElseThrow(() -> new HeroException("Le héros avec l'id : " + id + " n'a pas été trouvé !"))));
     }
 
     @Override
     public List<Hero> findAllHeroes() {
-        return null;
+        return HeroMapper.toDomainList(heroRepository.findAll());
     }
 
     @Override

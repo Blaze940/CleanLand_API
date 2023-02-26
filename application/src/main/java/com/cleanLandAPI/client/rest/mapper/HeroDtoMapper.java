@@ -1,6 +1,7 @@
 package com.cleanLandAPI.client.rest.mapper;
 
 import com.cleanLandAPI.client.rest.dto.HeroDto;
+import com.cleanLandAPI.client.rest.dto.HeroRequest;
 import com.cleanLandAPI.data.Hero;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public interface HeroDtoMapper {
                 hero.getRarity());
     }
 
-    static Hero toEntity(HeroDto heroDto) {
+    static Hero toEntity(HeroRequest heroDto) {
         return Hero.builder().name(heroDto.name())
                 .lifePoints(heroDto.lifePoints())
                 .experiencePoints(heroDto.experiencePoints())
