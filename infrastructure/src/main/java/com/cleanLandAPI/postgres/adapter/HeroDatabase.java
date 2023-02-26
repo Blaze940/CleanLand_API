@@ -1,7 +1,8 @@
 package com.cleanLandAPI.postgres.adapter;
 
 import com.cleanLandAPI.data.Hero;
-import com.cleanLandAPI.ports.server.HeroSpi;
+import com.cleanLandAPI.ports.server.HeroSpiCreatorHero;
+import com.cleanLandAPI.ports.server.HeroSpiFinderServer;
 import com.cleanLandAPI.postgres.mapper.HeroMapper;
 import com.cleanLandAPI.postgres.repository.HeroRepository;
 import lombok.RequiredArgsConstructor;
@@ -13,7 +14,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class HeroDatabase implements HeroSpi {
+public class HeroDatabase implements HeroSpiCreatorHero, HeroSpiFinderServer {
 
     private final HeroRepository heroRepository;
 

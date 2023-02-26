@@ -2,17 +2,19 @@ package com.cleanLandAPI.service;
 
 import com.cleanLandAPI.data.Hero;
 import com.cleanLandAPI.exception.HeroException;
-import com.cleanLandAPI.ports.client.HeroSpiInterface;
-import com.cleanLandAPI.ports.server.HeroSpi;
+import com.cleanLandAPI.ports.client.HeroSpiCreatorInterface;
+import com.cleanLandAPI.ports.client.HeroSpiFinderClient;
+import com.cleanLandAPI.ports.server.HeroSpiCreatorHero;
+import com.cleanLandAPI.ports.server.HeroSpiFinderServer;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 import java.util.Optional;
 
 @RequiredArgsConstructor
-public class HeroFinderService implements HeroSpiInterface{
+public class HeroFinderService implements HeroSpiFinderClient {
 
-    private final HeroSpi heroSpi;
+    private final HeroSpiFinderServer heroSpi;
 
     public List<Hero> findAllHeroes(){
         return heroSpi.findAllHeroes();

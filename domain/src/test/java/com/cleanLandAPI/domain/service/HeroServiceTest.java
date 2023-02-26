@@ -1,6 +1,6 @@
 package com.cleanLandAPI.domain.service;
 
-import com.cleanLandAPI.ports.server.HeroSpi;
+import com.cleanLandAPI.ports.server.HeroSpiCreatorHero;
 import com.cleanLandAPI.service.HeroService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -15,7 +15,7 @@ public class HeroServiceTest {
     private HeroService service;
 
     @Mock
-    private HeroSpi spi;
+    private HeroSpiCreatorHero spi;
 
 
     @Test

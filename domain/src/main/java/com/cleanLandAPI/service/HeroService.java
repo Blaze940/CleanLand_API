@@ -1,18 +1,18 @@
 package com.cleanLandAPI.service;
 
 import com.cleanLandAPI.data.Hero;
-import com.cleanLandAPI.data.enums.Specialities;
 import com.cleanLandAPI.exception.HeroException;
-import com.cleanLandAPI.ports.ApplicationError;
-import com.cleanLandAPI.ports.server.HeroSpi;
+import com.cleanLandAPI.ports.client.HeroSpiCreatorInterface;
+import com.cleanLandAPI.ports.server.HeroSpiCreatorHero;
 import com.cleanLandAPI.service.validation.HeroValidation;
-import io.vavr.control.Either;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @RequiredArgsConstructor
-public class HeroService implements HeroInterface{
+public class HeroService implements HeroSpiCreatorInterface, HeroInterface{
 
-    private final HeroSpi heroSpi;
+    private final HeroSpiCreatorHero heroSpi;
 
     @Override
     public void setLifePoints(Hero hero, int lifePoints) {
