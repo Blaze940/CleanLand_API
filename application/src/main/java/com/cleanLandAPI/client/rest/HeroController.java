@@ -21,8 +21,8 @@ import static com.cleanLandAPI.client.rest.mapper.HeroDtoMapper.toEntity;
 @RequestMapping(path = "/hero")
 public class HeroController {
 
-    private final HeroService heroService;
-    private final HeroFinderService heroFinderService;
+    private HeroFinderService heroFinderService;
+    private HeroService heroService;
 
 
     @PostMapping("/createHero")

@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Import;
 
 @ConditionalOnWebApplication
 @Import({ApplicationConfiguration.class})
-@SpringBootApplication(scanBasePackages = {"com.cleanLandAPI"}, exclude = {DataSourceAutoConfiguration.class })
+@SpringBootApplication(scanBasePackages = {"com.cleanLandAPI", "com.cleanLandAPI.configuration"}, exclude = {DataSourceAutoConfiguration.class})
 public class SpringAppApplication {
 
     public static void main(String[] args) {
