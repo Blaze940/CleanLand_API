@@ -1,7 +1,7 @@
 package com.cleanLandAPI.hero.functional.service;
 
 import com.cleanLandAPI.data.Hero;
-import com.cleanLandAPI.ports.server.HeroSpiFinderServer;
+import com.cleanLandAPI.ports.server.HeroPersistenceSpi;
 import com.cleanLandAPI.service.hero.HeroFinderService;
 import lombok.val;
 import org.junit.jupiter.api.Test;
@@ -11,6 +11,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Optional;
+import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
@@ -22,11 +23,11 @@ class HeroFinderServiceTest {
     private HeroFinderService heroFinderService;
 
     @Mock
-    private HeroSpiFinderServer heroSpiFinderServer;
+    private HeroPersistenceSpi heroSpiFinderServer;
 
     @Test
     void should_find_player_with_id() {
-        val given = 1585874;
+        val given = UUID.randomUUID();
         val hero = Optional.of(Hero.builder().build());
 
         when(heroSpiFinderServer.findHeroById(given)).thenReturn(hero);
@@ -42,7 +43,7 @@ class HeroFinderServiceTest {
 
     @Test
     void should_not_find_player_with_id() {
-        val given = 554454;
+        val given = UUID.randomUUID();
 
         when(heroSpiFinderServer.findHeroById(given)).thenReturn(Optional.empty());
 
