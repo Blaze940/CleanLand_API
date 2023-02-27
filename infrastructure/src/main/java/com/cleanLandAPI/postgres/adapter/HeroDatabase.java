@@ -22,7 +22,10 @@ public class HeroDatabase implements HeroSpiCreatorHero, HeroSpiFinderServer {
 
     @Override
     public Optional<Hero> findHeroById(int id){
-        return Optional.ofNullable(HeroMapper.toDomain(heroRepository.findById(id).orElseThrow(() -> new HeroException("Le héros avec l'id : " + id + " n'a pas été trouvé !"))));
+        return Optional.ofNullable(HeroMapper.toDomain(heroRepository.findById(id)
+                .orElseThrow(
+                        () -> new HeroException("Le héros avec l'id : " + id + " n'a pas été trouvé !"))
+        ));
     }
 
     @Override
