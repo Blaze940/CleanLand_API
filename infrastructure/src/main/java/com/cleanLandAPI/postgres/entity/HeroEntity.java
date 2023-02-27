@@ -17,6 +17,7 @@ import java.util.UUID;
 public class HeroEntity {
     @Id
     @Include
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     @Column(name = "NAME")
     private String name;

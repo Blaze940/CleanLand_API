@@ -18,7 +18,7 @@ public class HeroCreatorService implements HeroApiCreator {
 
         @Override
         public List<Hero> createBasicHeroes() {
-                return saveBasicHeroes(HeroStatHandlerService.createInitialHeroes());
+                return saveBasicHeroes(HeroStatBuilderService.createInitialHeroes());
         }
 
         @Override
@@ -30,7 +30,12 @@ public class HeroCreatorService implements HeroApiCreator {
         }
         @Override
         public Hero save(Hero hero) {
-            return null;
+                return heroPersistenceSpi.save(hero);
+        }
+        @Override
+        public Hero createOne(Hero hero) {
+                Hero heroToReturn = HeroStatBuilderService.createHero(hero.getName(),  hero.getSpeciality(), hero.getRarity());
+                return heroPersistenceSpi.save(heroToReturn);
         }
 
 }

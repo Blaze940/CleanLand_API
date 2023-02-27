@@ -19,25 +19,25 @@ import static com.cleanLandAPI.client.rest.mapper.HeroDtoMapper.toEntity;
 public class HeroController {
 
 
-    private final HeroApiFinderClient heroFinderService;
-    private final HeroApiCreator heroCreatorService;
+    private final HeroApiFinderClient heroApiFinderClient;
+    private final HeroApiCreator heroApiCreator;
 
 
     @PostMapping("/createHero")
-    public ResponseEntity<Object> createHero(@RequestBody HeroRequest hero) {
-        HeroDto heroDto = HeroDtoMapper.toDto(heroCreatorService.save(toEntity(hero)));
+    public ResponseEntity<HeroDto> createHero(@RequestBody HeroRequest heroBody) {
+        HeroDto heroDto = HeroDtoMapper.toDto(heroApiCreator.createOne(toEntity(heroBody)));
         return ResponseEntity.ok().body(heroDto);
     }
 
     @GetMapping("/createBasicHeroes")
     public ResponseEntity<List<HeroDto>> createBasicHeroes() {
-        List<HeroDto> heroes = HeroDtoMapper.toDtoList(heroCreatorService.createBasicHeroes());
+        List<HeroDto> heroes = HeroDtoMapper.toDtoList(heroApiCreator.createBasicHeroes());
         return ResponseEntity.ok().body(heroes);
     }
 
     @GetMapping("/findAllHeroes")
     public ResponseEntity<List<HeroDto>> findAllHeroes() {
-        List<HeroDto> heroes = HeroDtoMapper.toDtoList(heroFinderService.findAllHeroes());
+        List<HeroDto> heroes = HeroDtoMapper.toDtoList(heroApiFinderClient.findAllHeroes());
         return ResponseEntity.ok().body(heroes);
     }
 

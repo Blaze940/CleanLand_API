@@ -26,13 +26,7 @@ public interface HeroDtoMapper {
     static Hero toEntity(HeroRequest heroDto) {
         return Hero.builder()
                 .name(heroDto.name())
-                .lifePoints(heroDto.lifePoints())
-                .experiencePoints(heroDto.experiencePoints())
-                .power(heroDto.powers())
-                .level(heroDto.level())
                 .speciality(heroDto.speciality())
-                .armor(heroDto.armor())
-                .powerBoost(heroDto.powerBoost())
                 .rarity(heroDto.rarity())
                 .build();
     }

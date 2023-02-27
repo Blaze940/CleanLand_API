@@ -26,9 +26,6 @@ public interface HeroMapper {
     }
 
     static HeroEntity fromDomain(Hero hero){
-        if(hero.getId() == null){
-            hero.setId(UUID.randomUUID());
-        }
         return HeroEntity.builder()
                 .id(hero.getId())
                 .name(hero.getName())

@@ -5,27 +5,33 @@ import com.cleanLandAPI.data.enums.Rarity;
 import com.cleanLandAPI.data.enums.Specialities;
 
 import java.util.List;
+import java.util.UUID;
 
-public class HeroStatHandlerService {
+public class HeroStatBuilderService {
 
 
     public static List<Hero> createInitialHeroes(){
         List<Hero> heroes = List.of(
-                setHeroStat("Titank", Specialities.TANK, Rarity.COMMON),
-                setHeroStat("Assassinge", Specialities.ASSASSIN, Rarity.COMMON),
-                setHeroStat("Charlatan", Specialities.MAGE, Rarity.COMMON),
-                setHeroStat("Tankou", Specialities.TANK, Rarity.RARE),
-                setHeroStat("Dahmmer", Specialities.ASSASSIN, Rarity.RARE),
-                setHeroStat("Magichien", Specialities.MAGE, Rarity.RARE),
-                setHeroStat("Tortank", Specialities.TANK, Rarity.LEGENDARY),
-                setHeroStat("Hitler", Specialities.ASSASSIN, Rarity.LEGENDARY),
-                setHeroStat("RoiMage", Specialities.MAGE, Rarity.LEGENDARY)
+                buildHeroStat("Titank", Specialities.TANK, Rarity.COMMON),
+                buildHeroStat("Assassinge", Specialities.ASSASSIN, Rarity.COMMON),
+                buildHeroStat("Charlatan", Specialities.MAGE, Rarity.COMMON),
+                buildHeroStat("Tankou", Specialities.TANK, Rarity.RARE),
+                buildHeroStat("Dahmmer", Specialities.ASSASSIN, Rarity.RARE),
+                buildHeroStat("Magichien", Specialities.MAGE, Rarity.RARE),
+                buildHeroStat("Tortank", Specialities.TANK, Rarity.LEGENDARY),
+                buildHeroStat("Hitler", Specialities.ASSASSIN, Rarity.LEGENDARY),
+                buildHeroStat("RoiMage", Specialities.MAGE, Rarity.LEGENDARY)
         );
         return heroes;
     }
+    public static Hero createHero(String name, Specialities speciality, Rarity rarity){
+        Hero heroToReturn = buildHeroStat(name, speciality, rarity);
+        return heroToReturn;
+    }
 
-    private static Hero setHeroStat(String name, Specialities speciality, Rarity rarity){
+    private static Hero buildHeroStat(String name, Specialities speciality, Rarity rarity){
         Hero basicHero = Hero.builder()
+                        .id(UUID.randomUUID())
                         .name(name)
                         .speciality(speciality)
                         .rarity(rarity)

@@ -18,7 +18,8 @@ final public class Hero {
 
     private UUID id;
     private String name;
-    private Long lifePoints;
+    @Builder.Default
+    private Long lifePoints ;
 
     @Builder.Default
     private Long experiencePoints = 0L ;
