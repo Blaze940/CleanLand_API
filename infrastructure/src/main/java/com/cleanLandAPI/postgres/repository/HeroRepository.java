@@ -5,7 +5,8 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public interface HeroRepository extends JpaRepository<HeroEntity, Integer> {
+import java.util.UUID;
 
+@Repository
+public interface HeroRepository extends JpaRepository<HeroEntity, UUID> {
 }

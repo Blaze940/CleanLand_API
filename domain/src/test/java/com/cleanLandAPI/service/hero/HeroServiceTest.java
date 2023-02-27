@@ -1,7 +1,6 @@
 package com.cleanLandAPI.service.hero;
 
-import com.cleanLandAPI.ports.server.HeroSpiCreatorHero;
-import com.cleanLandAPI.service.hero.HeroService;
+import com.cleanLandAPI.ports.server.HeroPersistenceSpi;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -12,10 +11,10 @@ import org.mockito.junit.jupiter.MockitoExtension;
 public class HeroServiceTest {
 
     @InjectMocks
-    private HeroService service;
+    private HeroBattleService service;
 
     @Mock
-    private HeroSpiCreatorHero spi;
+    private HeroPersistenceSpi heroPersistenceSpi;
 
 
     @Test

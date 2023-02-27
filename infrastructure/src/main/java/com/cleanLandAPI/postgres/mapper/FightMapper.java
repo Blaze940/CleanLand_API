@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 public interface FightMapper {
     static Fight toDomain(FightEntity fight){
         return Fight.builder().
-                fightId(fight.getFightId()).
+                fightId(fight.getId()).
                 fightDate(fight.getFightDate()).
                 attacker(fight.getAttacker()).
                 defender(fight.getDefender()).

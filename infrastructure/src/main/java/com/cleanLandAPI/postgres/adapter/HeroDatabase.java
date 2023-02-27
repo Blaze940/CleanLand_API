@@ -2,8 +2,7 @@ package com.cleanLandAPI.postgres.adapter;
 
 import com.cleanLandAPI.data.Hero;
 import com.cleanLandAPI.exception.HeroException;
-import com.cleanLandAPI.ports.server.HeroSpiCreatorHero;
-import com.cleanLandAPI.ports.server.HeroSpiFinderServer;
+import com.cleanLandAPI.ports.server.HeroPersistenceSpi;
 import com.cleanLandAPI.postgres.mapper.HeroMapper;
 import com.cleanLandAPI.postgres.repository.HeroRepository;
 import lombok.RequiredArgsConstructor;
@@ -12,11 +11,11 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
-public class HeroDatabase implements HeroSpiCreatorHero, HeroSpiFinderServer {
-
+public class HeroDatabase implements HeroPersistenceSpi{
 
     private final HeroRepository heroRepository;
 
@@ -33,11 +32,18 @@ public class HeroDatabase implements HeroSpiCreatorHero, HeroSpiFinderServer {
         return HeroMapper.toDomainList(heroRepository.findAll());
     }
 
+
     @Override
     public Hero save(Hero hero) {
+
         val heroEntity = HeroMapper.fromDomain(hero);
         heroRepository.save(heroEntity);
         return HeroMapper.toDomain(heroEntity);
+    }
+
+    @Override
+    public Optional<Hero> findById(UUID id) {
+        return Optional.empty();
     }
 
 }
