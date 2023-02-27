@@ -1,17 +1,17 @@
 package com.cleanLandAPI.client.rest;
 
 import com.cleanLandAPI.client.rest.dto.HeroDto;
+import com.cleanLandAPI.client.rest.dto.HeroRequest;
 import com.cleanLandAPI.client.rest.mapper.HeroDtoMapper;
 import com.cleanLandAPI.data.Hero;
-import com.cleanLandAPI.service.HeroFinderService;
-import com.cleanLandAPI.service.HeroService;
+import com.cleanLandAPI.ports.client.HeroApiCreatorInterface;
+import com.cleanLandAPI.ports.client.HeroApiFinderClient;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 import static com.cleanLandAPI.client.rest.mapper.HeroDtoMapper.toEntity;
 
@@ -20,21 +20,29 @@ import static com.cleanLandAPI.client.rest.mapper.HeroDtoMapper.toEntity;
 @RequestMapping(path = "/hero")
 public class HeroController {
 
-    private final HeroService heroService;
-    private final HeroFinderService heroFinderService;
+
+    private final HeroApiFinderClient heroApiFinderClient;
+    private final HeroApiCreatorInterface heroApiCreatorInterface;
 
 
     @PostMapping("/createHero")
-    public ResponseEntity<Object> createHero(@RequestBody HeroDto hero) {
-        HeroDto heroDto = HeroDtoMapper.toDto(heroService.save(toEntity(hero)));
+    public ResponseEntity<Object> createHero(@RequestBody HeroRequest hero) {
+        HeroDto heroDto = HeroDtoMapper.toDto(heroApiCreatorInterface.save(toEntity(hero)));
         return ResponseEntity.ok().body(heroDto);
     }
 
     @GetMapping("/findAllHeroes")
     public ResponseEntity<List<HeroDto>> findAllHeroes() {
-        List<HeroDto> heroes = HeroDtoMapper.toDtoList(heroFinderService.findAllHeroes());
+        List<HeroDto> heroes = HeroDtoMapper.toDtoList(heroApiFinderClient.findAllHeroes());
         return ResponseEntity.ok().body(heroes);
     }
 
+    @GetMapping("/findHeroById/{id}")
+    public ResponseEntity<HeroDto> findHeroById(@PathVariable int heroId) {
+        Optional<Hero> hero = heroApiFinderClient.findHeroById(heroId);
+        return hero.map(HeroDtoMapper::toDto)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.badRequest().build());
+    }
 
 }

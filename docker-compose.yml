@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  db_starter:
+    container_name: postgres_cleanland_api
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: user
+      POSTGRES_DB: cleanland_api
+    ports:
+      - "5400:5432"
+    volumes:
+      - cleanland_api-volume:/applis/docker-compose/archi_trade_me/data
+volumes:
+  cleanland_api-volume:
+    external: true

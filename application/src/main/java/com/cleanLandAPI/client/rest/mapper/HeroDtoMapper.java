@@ -1,6 +1,7 @@
 package com.cleanLandAPI.client.rest.mapper;
 
 import com.cleanLandAPI.client.rest.dto.HeroDto;
+import com.cleanLandAPI.client.rest.dto.HeroRequest;
 import com.cleanLandAPI.data.Hero;
 
 import java.util.List;
@@ -10,6 +11,7 @@ public interface HeroDtoMapper {
 
     static HeroDto toDto(Hero hero) {
         return new HeroDto(
+                hero.getId(),
                 hero.getName(),
                 hero.getLifePoints(),
                 hero.getExperiencePoints(),
@@ -19,13 +21,14 @@ public interface HeroDtoMapper {
                 hero.getRarity());
     }
 
-    static Hero toEntity(HeroDto heroDto) {
+    static Hero toEntity(HeroRequest heroDto) {
         return Hero.builder().name(heroDto.name())
                 .lifePoints(heroDto.lifePoints())
                 .experiencePoints(heroDto.experiencePoints())
                 .powers(heroDto.powers())
                 .level(heroDto.level())
-                .speciality(heroDto.speciality()).rarity(heroDto.rarity())
+                .speciality(heroDto.speciality())
+                .rarity(heroDto.rarity())
                 .build();
     }
 

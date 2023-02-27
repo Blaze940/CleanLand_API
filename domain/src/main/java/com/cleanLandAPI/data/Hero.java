@@ -3,10 +3,13 @@ package com.cleanLandAPI.data;
 
 import com.cleanLandAPI.data.enums.Rarity;
 import lombok.Builder;
+import lombok.Setter;
 
 @Builder
+@Setter
 final public class Hero {
 
+    private int id;
     private String name;
     private Long lifePoints;
     private Long experiencePoints;
@@ -14,6 +17,11 @@ final public class Hero {
     private int level;
     private Speciality speciality;
     private Rarity rarity;
+    private int armor;
+
+    public int getId() {
+        return id;
+    }
 
     public String getName() {
         return name;
@@ -41,6 +49,10 @@ final public class Hero {
 
     public Rarity getRarity() {
         return rarity;
+    }
+
+    public int getArmor() {
+        return armor;
     }
 
     public void updateLifePoints(Long lifePoints) {
