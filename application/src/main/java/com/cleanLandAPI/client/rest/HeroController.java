@@ -32,7 +32,7 @@ public class HeroController {
 
     @GetMapping("/createBasicHeroes")
     public ResponseEntity<List<HeroDto>> createBasicHeroes() {
-        List<HeroDto> heroes = HeroDtoMapper.toDtoList(heroApiCreator.createBasicHeroes());
+        List<HeroDto> heroes = HeroDtoMapper.toDtoList(heroApiCreatorInterface.createBasicHeroes());
         return ResponseEntity.ok().body(heroes);
     }
 

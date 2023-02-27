@@ -30,7 +30,6 @@ final public class Hero {
     private int powerBoost;
     private Specialities speciality;
     private Rarity rarity;
-    private int armor;
 
     public void updateLifePoints(Long lifePoints) {
         this.lifePoints = lifePoints;

@@ -6,14 +6,13 @@ import com.cleanLandAPI.client.rest.dto.FightRequest;
 import com.cleanLandAPI.client.rest.mapper.FightDtoMapper;
 import com.cleanLandAPI.ports.client.FightApiInterface;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.UUID;
 
-import static com.cleanLandAPI.client.rest.mapper.FightDtoMapper.toEntity;
+import static com.cleanLandAPI.client.rest.mapper.FightDtoMapper.entityToDomain;
 
 @RequestMapping(path = "/battle")
 @RequiredArgsConstructor
@@ -25,7 +24,7 @@ public class BattleController {
 
     @PostMapping("/createBattle")
     public ResponseEntity<Object> createBattle(@RequestBody FightRequest fight) {
-        FightDto fightDto = FightDtoMapper.toDto(fightApiInterface.createBattle(toEntity(fight)));
+        FightDto fightDto = FightDtoMapper.toDto(fightApiInterface.createBattle(entityToDomain(fight)));
         return ResponseEntity.ok().body(fightDto);
     }
 
