@@ -18,7 +18,7 @@ public interface FightDtoMapper {
                 fight.getWinner());
     }
 
-    static Fight toEntity(FightRequest fightDto) {
+    static Fight entityToDomain(FightRequest fightDto) {
         return Fight.builder()
                 .fightDate(fightDto.fightDate())
                 .attacker(fightDto.attacker())

@@ -1,6 +1,5 @@
 package com.cleanLandAPI.client.rest;
 
-import com.cleanLandAPI.ports.client.FightApiInterface;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
