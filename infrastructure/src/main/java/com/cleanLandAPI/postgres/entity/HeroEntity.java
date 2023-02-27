@@ -1,10 +1,13 @@
 package com.cleanLandAPI.postgres.entity;
 
-import com.cleanLandAPI.data.Speciality;
 import com.cleanLandAPI.data.enums.Rarity;
+import com.cleanLandAPI.data.enums.Specialities;
 import lombok.*;
 import lombok.EqualsAndHashCode.Include;
 import jakarta.persistence.*;
+
+import java.util.UUID;
+
 @Entity
 @Getter
 @Builder
@@ -14,20 +17,27 @@ import jakarta.persistence.*;
 public class HeroEntity {
     @Id
     @Include
-    private int id;
+    private UUID id;
     @Column(name = "NAME")
     private String name;
     @Column(name = "LIFE_POINTS")
     private Long lifePoints;
     @Column(name = "EXPERIENCE_POINTS")
     private Long experiencePoints;
-    @Column(name = "POWERS")
-    private int powers;
+
+    @Column(name = "POWER")
+    private int power;
     @Column(name = "LEVEL")
     private int level;
-    @Embedded
+
+    @Column(name = "ARMOR")
+    private int armor;
+
+    @Column(name = "POWER_BOOST")
+    private int powerBoost;
+
     @Column(name = "SPECIALITY")
-    private Speciality speciality;
+    private Specialities speciality;
     @Column(name = "RARITY")
     private Rarity rarity;
 

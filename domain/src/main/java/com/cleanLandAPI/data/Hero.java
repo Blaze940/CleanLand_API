@@ -2,54 +2,37 @@ package com.cleanLandAPI.data;
 
 
 import com.cleanLandAPI.data.enums.Rarity;
+import com.cleanLandAPI.data.enums.Specialities;
 import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.With;
+
+import java.util.UUID;
 
 @Builder
+@Getter
+@Setter
+@With
 final public class Hero {
 
-    private int id;
+    private UUID id;
     private String name;
     private Long lifePoints;
-    private Long experiencePoints;
-    private int powers;
-    private int level;
-    private Speciality speciality;
+
+    @Builder.Default
+    private Long experiencePoints = 0L ;
+    private int power;
+    private int armor ;
+    @Builder.Default
+    private int level = 1;
+    private int powerBoost;
+    private Specialities speciality;
     private Rarity rarity;
-
-    public int getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public Long getLifePoints() {
-        return lifePoints;
-    }
-
-    public Long getExperiencePoints() {
-        return experiencePoints;
-    }
-
-    public int getPowers() {
-        return powers;
-    }
-
-    public int getLevel() {
-        return level;
-    }
-
-    public Speciality getSpeciality() {
-        return speciality;
-    }
-
-    public Rarity getRarity() {
-        return rarity;
-    }
 
     public void updateLifePoints(Long lifePoints) {
         this.lifePoints = lifePoints;
     }
+
 
 }

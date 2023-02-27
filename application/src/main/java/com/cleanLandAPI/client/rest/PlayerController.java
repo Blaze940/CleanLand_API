@@ -22,6 +22,10 @@ public class PlayerController {
     public void updatePlayer() {
     }
 
+    @GetMapping("/searchPlayer")
+    public void searchPlayer() {
+    }
+
 
 
 }

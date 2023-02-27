@@ -51,4 +51,6 @@ public class BattleController {
         return ResponseEntity.ok().body(fights);
     }
 
+    //find all battles of a hero
+
 }

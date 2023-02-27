@@ -15,19 +15,24 @@ public interface HeroDtoMapper {
                 hero.getName(),
                 hero.getLifePoints(),
                 hero.getExperiencePoints(),
-                hero.getPowers(),
+                hero.getPower(),
                 hero.getLevel(),
+                hero.getArmor(),
+                hero.getPowerBoost(),
                 hero.getSpeciality(),
                 hero.getRarity());
     }
 
     static Hero toEntity(HeroRequest heroDto) {
-        return Hero.builder().name(heroDto.name())
+        return Hero.builder()
+                .name(heroDto.name())
                 .lifePoints(heroDto.lifePoints())
                 .experiencePoints(heroDto.experiencePoints())
-                .powers(heroDto.powers())
+                .power(heroDto.powers())
                 .level(heroDto.level())
                 .speciality(heroDto.speciality())
+                .armor(heroDto.armor())
+                .powerBoost(heroDto.powerBoost())
                 .rarity(heroDto.rarity())
                 .build();
     }

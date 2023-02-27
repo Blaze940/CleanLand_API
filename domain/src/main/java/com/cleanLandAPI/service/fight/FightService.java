@@ -1,9 +1,8 @@
 package com.cleanLandAPI.service.fight;
 
 import com.cleanLandAPI.data.Fight;
-import com.cleanLandAPI.data.Hero;
 import com.cleanLandAPI.ports.client.FightApiInterface;
-import com.cleanLandAPI.ports.server.FightSpiInterface;
+import com.cleanLandAPI.ports.server.FightPersistenceSpi;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -15,7 +14,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class FightService implements FightApiInterface {
 
-    private final FightSpiInterface fightSpi;
+    private final FightPersistenceSpi fightSpi;
 
     @Override
     public Fight createBattle(Fight fight) {

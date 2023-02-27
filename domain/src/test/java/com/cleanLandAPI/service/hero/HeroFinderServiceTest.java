@@ -1,7 +1,7 @@
 package com.cleanLandAPI.service.hero;
 
 
-import com.cleanLandAPI.ports.server.HeroSpiFinderServer;
+
 import com.cleanLandAPI.service.hero.HeroFinderService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -15,8 +15,8 @@ public class HeroFinderServiceTest {
     @InjectMocks
     private HeroFinderService service;
 
-    @Mock
-    private HeroSpiFinderServer spi;
+//    @Mock
+//    private HeroSpiFinderServer spi;
 
     @Test
     public void should_find_hero() {

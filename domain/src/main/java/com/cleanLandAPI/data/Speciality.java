@@ -3,28 +3,26 @@ package com.cleanLandAPI.data;
 import com.cleanLandAPI.data.enums.Rarity;
 import com.cleanLandAPI.data.enums.Specialities;
 import com.cleanLandAPI.service.hero.SpecialityInterface;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.UUID;
+
 @Builder
 @Getter
 @Setter
+@AllArgsConstructor
 public final class Speciality implements SpecialityInterface {
 
-
+    private UUID id;
     private int armor;
     private int powerAdd;
     private int pvInit;
     private Specialities classSpeciality;
 
 
-    public Speciality(int armor, int powerAdd, int pvInit, Specialities classSpeciality) {
-        this.armor = armor;
-        this.powerAdd = powerAdd;
-        this.pvInit = pvInit;
-        this.classSpeciality = classSpeciality;
-    }
 
     @Override
     public boolean isRare(Rarity rarity){
